@@ -37,9 +37,11 @@ const Navbar = () => {
     >
       <div className="container flex items-center justify-between">
         <a href="#hero" className="flex items-center">
-          <h1 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-tech-600 to-tech-500 m-0">
-            Cheese Tech
-          </h1>
+          <img 
+            src="/lovable-uploads/c416b954-f460-4b1a-8877-bb2a8887bfe6.png" 
+            alt="Cheese Tech Logo" 
+            className="h-12 md:h-14 w-auto"
+          />
         </a>
         
         {/* Desktop Navigation */}

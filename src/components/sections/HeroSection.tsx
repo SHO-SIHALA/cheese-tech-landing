@@ -49,14 +49,11 @@ const HeroSection = () => {
           <div className="relative mx-auto lg:ml-auto animate-fade-in">
             <div className="relative w-full max-w-lg aspect-square">
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-tech-500/20 to-tech-300/20 blur-3xl"></div>
-              <div className="relative glass rounded-2xl overflow-hidden shadow-2xl">
+              <div className="relative glass rounded-2xl overflow-hidden shadow-2xl p-6 flex items-center justify-center">
                 <img 
-                  src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
-                  alt="Tech Infrastructure" 
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                  width="600"
-                  height="600"
+                  src="/lovable-uploads/c416b954-f460-4b1a-8877-bb2a8887bfe6.png" 
+                  alt="Cheese Tech Logo" 
+                  className="w-4/5 h-auto"
                 />
               </div>
             </div>
