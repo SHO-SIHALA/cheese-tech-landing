@@ -3,20 +3,20 @@ import { cn } from "@/lib/utils";
 
 const HeroSection = () => {
   return (
-    <section id="hero" className="min-h-screen pt-24 flex items-center bg-gradient-tech">
+    <section id="hero" className="min-h-screen pt-24 flex items-center bg-background">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 animate-fade-up">
             <div className="inline-block">
-              <span className="px-3 py-1 text-xs font-semibold rounded-full bg-tech-200 text-tech-800">
+              <span className="px-3 py-1 text-xs font-semibold rounded-full bg-secondary text-foreground">
                 IT & Cybersecurity Solutions
               </span>
             </div>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-foreground">
               Secure & Innovative <br />
-              <span className="text-tech-600">IT Solutions</span>
+              <span className="text-primary">IT Solutions</span>
             </h1>
-            <p className="text-lg text-cheese-600 max-w-lg">
+            <p className="text-lg text-foreground/80 max-w-lg">
               We provide cutting-edge technology services to help your business stay protected, efficient, and future-ready.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -25,7 +25,7 @@ const HeroSection = () => {
                 className={cn(
                   "animated-element inline-flex items-center justify-center",
                   "rounded-lg px-6 py-3 font-medium text-white",
-                  "bg-tech-600 hover:bg-tech-700 shadow-lg"
+                  "bg-primary hover:bg-primary/90 shadow-lg"
                 )}
               >
                 Get Started
@@ -38,8 +38,8 @@ const HeroSection = () => {
                 href="#services" 
                 className={cn(
                   "animated-element inline-flex items-center justify-center",
-                  "rounded-lg px-6 py-3 font-medium text-tech-700",
-                  "bg-white/80 hover:bg-white border border-tech-200 shadow-sm"
+                  "rounded-lg px-6 py-3 font-medium text-primary",
+                  "bg-white/80 hover:bg-white border border-secondary shadow-sm"
                 )}
               >
                 Explore Services
@@ -48,7 +48,7 @@ const HeroSection = () => {
           </div>
           <div className="relative mx-auto lg:ml-auto animate-fade-in">
             <div className="relative w-full max-w-lg aspect-square">
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-tech-500/20 to-tech-300/20 blur-3xl"></div>
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-primary/20 to-secondary/20 blur-3xl"></div>
               <div className="relative glass rounded-2xl overflow-hidden shadow-2xl p-6 flex items-center justify-center">
                 <img 
                   src="/lovable-uploads/c416b954-f460-4b1a-8877-bb2a8887bfe6.png" 

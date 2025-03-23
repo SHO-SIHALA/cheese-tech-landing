@@ -5,19 +5,19 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="bg-cheese-800 text-white py-16">
+    <footer className="bg-steelblue-dark text-white py-16">
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           <div className="space-y-4">
-            <h3 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-tech-300 to-tech-200">Cheese Tech</h3>
-            <p className="text-cheese-300 text-sm max-w-xs">
+            <h3 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-secondary to-white">Cheese Tech</h3>
+            <p className="text-white/80 text-sm max-w-xs">
               Your trusted IT & Cybersecurity partner, providing innovative solutions to help businesses stay secure and efficient.
             </p>
           </div>
           
           <div className="space-y-4">
             <h4 className="text-lg font-semibold text-white">Contact Us</h4>
-            <address className="not-italic text-cheese-300 text-sm space-y-2">
+            <address className="not-italic text-white/80 text-sm space-y-2">
               <p>Cheese Tech (SMC-Pvt) Ltd.</p>
               <p>Office #123, Some Street</p>
               <p>City, Country, Postal Code</p>
@@ -68,7 +68,7 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="border-t border-cheese-700/40 mt-12 pt-8 text-sm text-cheese-400 flex flex-col md:flex-row justify-between items-center">
+        <div className="border-t border-white/20 mt-12 pt-8 text-sm text-white/70 flex flex-col md:flex-row justify-between items-center">
           <p>&copy; {currentYear} Cheese Tech (SMC-Pvt) Ltd. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>

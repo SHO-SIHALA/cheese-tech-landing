@@ -50,7 +50,7 @@ const Navbar = () => {
             <a
               key={link.href}
               href={link.href}
-              className="text-cheese-700 hover:text-tech-600 transition-colors font-medium text-sm"
+              className="text-foreground hover:text-primary transition-colors font-medium text-sm"
             >
               {link.label}
             </a>
@@ -65,15 +65,15 @@ const Navbar = () => {
         >
           <div className="w-6 flex flex-col items-end gap-1.5">
             <span className={cn(
-              "h-0.5 bg-cheese-700 rounded-full transition-all duration-300 ease-in-out",
+              "h-0.5 bg-foreground rounded-full transition-all duration-300 ease-in-out",
               mobileMenuOpen ? "w-6 transform rotate-45 translate-y-2" : "w-6"
             )}></span>
             <span className={cn(
-              "h-0.5 bg-cheese-700 rounded-full transition-all duration-300 ease-in-out",
+              "h-0.5 bg-foreground rounded-full transition-all duration-300 ease-in-out",
               mobileMenuOpen ? "opacity-0 w-6" : "w-4"
             )}></span>
             <span className={cn(
-              "h-0.5 bg-cheese-700 rounded-full transition-all duration-300 ease-in-out",
+              "h-0.5 bg-foreground rounded-full transition-all duration-300 ease-in-out",
               mobileMenuOpen ? "w-6 transform -rotate-45 -translate-y-2" : "w-5"
             )}></span>
           </div>
@@ -91,7 +91,7 @@ const Navbar = () => {
               key={link.href}
               href={link.href}
               onClick={toggleMobileMenu}
-              className="text-xl font-medium text-white my-4 py-2 hover:text-tech-300 transition-colors"
+              className="text-xl font-medium text-white my-4 py-2 hover:text-secondary transition-colors"
             >
               {link.label}
             </a>

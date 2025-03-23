@@ -52,7 +52,21 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				// Custom colors
+				steelblue: {
+					DEFAULT: '#5387BF',
+					light: '#A7C7DF',
+					dark: '#3A6E9E',
+				},
+				sand: {
+					DEFAULT: '#D4CFBF',
+					dark: '#B5B0A0',
+					light: '#E5E0D0',
+				},
+				slate: {
+					DEFAULT: '#464748',
+					light: '#6E6F70',
+					dark: '#2E2F30',
+				},
 				cheese: {
 					50: '#f8fafc',
 					100: '#f1f5f9',
@@ -71,10 +85,10 @@ export default {
 					200: '#bae6fd',
 					300: '#7dd3fc',
 					400: '#38bdf8',
-					500: '#4682B4',
-					600: '#3A6E9E',
-					700: '#2E5A88',
-					800: '#224672',
+					500: '#5387BF',
+					600: '#4679B1',
+					700: '#3A6E9E',
+					800: '#2E5A88',
 					900: '#16325C',
 				},
 				yellow: {
