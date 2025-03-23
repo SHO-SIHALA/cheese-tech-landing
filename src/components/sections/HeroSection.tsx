@@ -1,5 +1,6 @@
 
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
   return (
@@ -51,9 +52,9 @@ const HeroSection = () => {
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-primary/20 to-secondary/20 blur-3xl"></div>
               <div className="relative glass rounded-2xl overflow-hidden shadow-2xl p-6 flex items-center justify-center">
                 <img 
-                  src="/lovable-uploads/c416b954-f460-4b1a-8877-bb2a8887bfe6.png" 
-                  alt="Cheese Tech Logo" 
-                  className="w-4/5 h-auto"
+                  src="/lovable-uploads/48a0a64e-71af-4472-904c-e3c9c4327543.png" 
+                  alt="IT Services Illustration" 
+                  className="w-full h-auto object-contain"
                 />
               </div>
             </div>
