@@ -1,68 +1,69 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 48 16% 82%;
-    --foreground: 210 3% 28%;
+    --background: 225 30% 96%;
+    --foreground: 222 47% 11%;
 
     --card: 0 0% 100%;
-    --card-foreground: 210 3% 28%;
+    --card-foreground: 222 47% 11%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 210 3% 28%;
+    --popover-foreground: 222 47% 11%;
 
-    --primary: 210 38% 54%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 246 80% 60%;
+    --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 47% 76%;
-    --secondary-foreground: 210 3% 28%;
+    --secondary: 199 89% 48%;
+    --secondary-foreground: 222 47% 11%;
 
-    --muted: 48 10% 88%;
-    --muted-foreground: 210 3% 40%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 210 47% 76%;
-    --accent-foreground: 210 3% 28%;
+    --accent: 199 89% 48%;
+    --accent-foreground: 222 47% 11%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 48 16% 82%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 210 20% 80%;
-    --input: 210 20% 80%;
-    --ring: 210 38% 54%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 246 80% 60%;
 
     --radius: 0.75rem;
   }
 
   .dark {
-    --background: 210 3% 20%;
-    --foreground: 48 16% 82%;
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
 
-    --card: 210 3% 15%;
-    --card-foreground: 48 16% 82%;
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 210 3% 15%;
-    --popover-foreground: 48 16% 82%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 210 38% 54%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 246 80% 60%;
+    --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 47% 76%;
-    --secondary-foreground: 210 3% 28%;
+    --secondary: 199 89% 48%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 210 3% 25%;
-    --muted-foreground: 210 3% 60%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 210 47% 76%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 199 89% 48%;
+    --accent-foreground: 210 40% 98%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 48 16% 82%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 210 3% 30%;
-    --input: 210 3% 30%;
-    --ring: 210 38% 54%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 246 80% 60%;
   }
 }
 
@@ -121,5 +122,33 @@
   /* Animation utilities */
   .animated-element {
     @apply transition-all duration-300 ease-in-out;
+  }
+  
+  /* AI-specific styling */
+  .ai-gradient-text {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+  
+  .ai-card {
+    @apply bg-gradient-to-br from-white/90 to-white/70 backdrop-blur-lg border border-white/30 shadow-lg;
+  }
+  
+  .ai-button {
+    @apply relative overflow-hidden bg-gradient-to-r from-primary to-secondary text-white rounded-lg px-6 py-3 font-medium shadow-lg transition-all hover:shadow-xl hover:scale-105;
+  }
+  
+  .ai-grid-pattern {
+    background-image: radial-gradient(hsla(var(--primary), 0.1) 1px, transparent 1px);
+    background-size: 30px 30px;
+  }
+  
+  .neural-path {
+    @apply absolute h-[1px] bg-gradient-to-r from-primary/10 to-secondary/20;
+    animation: pulse 3s infinite;
+  }
+  
+  @keyframes pulse {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 0.8; }
   }
 }
