@@ -1,11 +1,13 @@
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import NetworkBackground from "@/components/NetworkBackground";
 
 const HeroSection = () => {
   return (
-    <section id="hero" className="min-h-screen pt-24 flex items-center bg-background">
-      <div className="container mx-auto">
+    <section id="hero" className="min-h-screen pt-24 flex items-center bg-background relative overflow-hidden">
+      <NetworkBackground className="opacity-60" />
+      <div className="container mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 animate-fade-up">
             <div className="inline-block">
