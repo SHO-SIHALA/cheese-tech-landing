@@ -50,7 +50,7 @@ const HeroSection = () => {
           <div className="relative mx-auto lg:ml-auto animate-fade-in">
             <div className="relative w-full max-w-lg aspect-square">
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-primary/20 to-secondary/20 blur-3xl"></div>
-              <div className="relative glass rounded-2xl overflow-hidden shadow-2xl p-6 flex items-center justify-center">
+              <div className="relative glass rounded-2xl overflow-hidden shadow-2xl p-6 flex items-center justify-center bg-white/80">
                 <img 
                   src="/lovable-uploads/48a0a64e-71af-4472-904c-e3c9c4327543.png" 
                   alt="IT Services Illustration" 
