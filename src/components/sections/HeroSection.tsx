@@ -3,7 +3,6 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import NetworkBackground from "@/components/NetworkBackground";
 import { useEffect, useRef } from "react";
-import { Badge } from "@/components/ui/badge";
 
 // Create an AI-themed floating particle effect
 const AIParticles = () => {
@@ -149,11 +148,6 @@ const HeroSection = () => {
       <div className="container mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 animate-fade-up">
-            <div className="inline-block">
-              <Badge variant="secondary" className="px-3 py-1 text-xs font-semibold rounded-full">
-                <span className="mr-1">🤖</span> AI-Powered Solutions
-              </Badge>
-            </div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
               Intelligent <br />
               <span className="ai-gradient-text">Technology Solutions</span>
