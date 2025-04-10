@@ -26,7 +26,7 @@ const AIParticles = () => {
     window.addEventListener('resize', setCanvasDimensions);
     
     // Particle properties
-    const particleCount = 100;
+    const particleCount = 120; // Increased particle count
     const particles: {
       x: number;
       y: number;
@@ -42,11 +42,11 @@ const AIParticles = () => {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        size: Math.random() * 2 + 0.5,
-        speedX: (Math.random() - 0.5) * 0.3,
-        speedY: (Math.random() - 0.5) * 0.3,
-        hue: Math.random() > 0.5 ? 200 : 190, // Even darker blue hues
-        opacity: Math.random() * 0.6 + 0.4 // Increased opacity
+        size: Math.random() * 2.5 + 0.8, // Slightly larger particles
+        speedX: (Math.random() - 0.5) * 0.4, // Increased movement speed
+        speedY: (Math.random() - 0.5) * 0.4,
+        hue: Math.random() > 0.5 ? 195 : 185, // Even darker blue hues
+        opacity: Math.random() * 0.7 + 0.5 // Higher opacity for stronger visibility
       });
     }
     
@@ -75,7 +75,7 @@ const AIParticles = () => {
         // Draw particle
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = `hsla(${p.hue}, 75%, 20%, ${p.opacity})`; // Much darker blue with higher saturation
+        ctx.fillStyle = `hsla(${p.hue}, 80%, 15%, ${p.opacity})`; // Darker blue with higher saturation
         ctx.fill();
         
         // Connect particles within a certain distance
@@ -85,32 +85,32 @@ const AIParticles = () => {
           const dy = p.y - p2.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
           
-          if (distance < 100) {
+          if (distance < 120) { // Increased connection distance
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
-            const opacity = 0.2 * (1 - distance / 100); // Increased opacity for connections
-            ctx.strokeStyle = `hsla(200, 75%, 15%, ${opacity})`; // Much darker blue for connections
-            ctx.lineWidth = 0.6; // Slightly thicker lines
+            const opacity = 0.25 * (1 - distance / 120); // Stronger opacity for connections
+            ctx.strokeStyle = `hsla(195, 85%, 12%, ${opacity})`; // Much darker blue for connections
+            ctx.lineWidth = 0.8; // Thicker lines for more visibility
             ctx.stroke();
           }
         }
         
-        // Subtle mouse interaction
+        // Stronger mouse interaction
         const dx = p.x - mouseX;
         const dy = p.y - mouseY;
         const distance = Math.sqrt(dx * dx + dy * dy);
         if (distance < 200) {
-          const force = 0.01 * (1 - distance / 200);
+          const force = 0.015 * (1 - distance / 200); // Increased force
           p.speedX += dx * force;
           p.speedY += dy * force;
         }
         
         // Limit speed
         const speed = Math.sqrt(p.speedX * p.speedX + p.speedY * p.speedY);
-        if (speed > 1) {
-          p.speedX = (p.speedX / speed) * 1;
-          p.speedY = (p.speedY / speed) * 1;
+        if (speed > 1.2) { // Increased max speed
+          p.speedX = (p.speedX / speed) * 1.2;
+          p.speedY = (p.speedY / speed) * 1.2;
         }
       }
       
@@ -136,7 +136,7 @@ const AIParticles = () => {
   return (
     <canvas 
       ref={canvasRef} 
-      className="absolute inset-0 w-full h-full opacity-90 z-0"
+      className="absolute inset-0 w-full h-full opacity-100 z-0" // Full opacity for stronger effect
     />
   );
 };
