@@ -1,3 +1,4 @@
+
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import NetworkBackground from "@/components/NetworkBackground";
@@ -44,8 +45,8 @@ const AIParticles = () => {
         size: Math.random() * 2 + 0.5,
         speedX: (Math.random() - 0.5) * 0.3,
         speedY: (Math.random() - 0.5) * 0.3,
-        hue: Math.random() > 0.5 ? 210 : 200, // Even darker blue hues
-        opacity: Math.random() * 0.5 + 0.3
+        hue: Math.random() > 0.5 ? 200 : 190, // Even darker blue hues
+        opacity: Math.random() * 0.6 + 0.4 // Increased opacity
       });
     }
     
@@ -74,7 +75,7 @@ const AIParticles = () => {
         // Draw particle
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = `hsla(${p.hue}, 70%, 30%, ${p.opacity})`; // Darker blue with lower lightness
+        ctx.fillStyle = `hsla(${p.hue}, 75%, 20%, ${p.opacity})`; // Much darker blue with higher saturation
         ctx.fill();
         
         // Connect particles within a certain distance
@@ -88,9 +89,9 @@ const AIParticles = () => {
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
-            const opacity = 0.15 * (1 - distance / 100);
-            ctx.strokeStyle = `hsla(210, 70%, 20%, ${opacity})`; // Even darker blue for connections
-            ctx.lineWidth = 0.5;
+            const opacity = 0.2 * (1 - distance / 100); // Increased opacity for connections
+            ctx.strokeStyle = `hsla(200, 75%, 15%, ${opacity})`; // Much darker blue for connections
+            ctx.lineWidth = 0.6; // Slightly thicker lines
             ctx.stroke();
           }
         }
@@ -135,7 +136,7 @@ const AIParticles = () => {
   return (
     <canvas 
       ref={canvasRef} 
-      className="absolute inset-0 w-full h-full opacity-80 z-0"
+      className="absolute inset-0 w-full h-full opacity-90 z-0"
     />
   );
 };
