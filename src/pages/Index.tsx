@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -7,6 +6,7 @@ import AboutSection from "@/components/sections/AboutSection";
 import ServicesSection from "@/components/sections/ServicesSection";
 import WhyUsSection from "@/components/sections/WhyUsSection";
 import ContactSection from "@/components/sections/ContactSection";
+import FeaturedProducts from "@/components/sections/FeaturedProducts";
 
 const Index = () => {
   useEffect(() => {
@@ -44,7 +44,7 @@ const Index = () => {
       <main className="flex-grow">
         <HeroSection />
         <AboutSection />
-        <ServicesSection />
+        <FeaturedProducts />
         <WhyUsSection />
         <ContactSection />
       </main>
