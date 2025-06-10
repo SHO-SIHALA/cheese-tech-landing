@@ -8,7 +8,7 @@ interface CartItem {
   id: string;
   product_id: string;
   quantity: number;
-  product: {
+  products: {
     name: string;
     price: number;
     image_url?: string;
@@ -21,6 +21,7 @@ interface ShoppingContextType {
   removeFromCart: (itemId: string) => Promise<void>;
   updateQuantity: (itemId: string, quantity: number) => Promise<void>;
   clearCart: () => Promise<void>;
+  getCartTotal: () => number;
   totalItems: number;
   totalPrice: number;
   isLoading: boolean;
@@ -52,7 +53,7 @@ export const ShoppingProvider: React.FC<{ children: React.ReactNode }> = ({ chil
           id,
           product_id,
           quantity,
-          product:products(name, price, image_url)
+          products(name, price, image_url)
         `)
         .eq('user_id', user.id);
 
@@ -183,8 +184,12 @@ export const ShoppingProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     }
   };
 
+  const getCartTotal = () => {
+    return cartItems.reduce((sum, item) => sum + (item.products.price * item.quantity), 0);
+  };
+
   const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
-  const totalPrice = cartItems.reduce((sum, item) => sum + (item.product.price * item.quantity), 0);
+  const totalPrice = getCartTotal();
 
   useEffect(() => {
     if (user) {
@@ -201,6 +206,7 @@ export const ShoppingProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       removeFromCart,
       updateQuantity,
       clearCart,
+      getCartTotal,
       totalItems,
       totalPrice,
       isLoading,
