@@ -19,8 +19,8 @@ const Footer = () => {
             <h4 className="text-lg font-semibold text-white">Contact Us</h4>
             <address className="not-italic text-white/80 text-sm space-y-2">
               <p>Cheese Tech (SMC-Pvt) Ltd.</p>
-              <p>Office #123, Some Street</p>
-              <p>City, Country, Postal Code</p>
+              <p>703 Street 43-A Ghouri Town Phase 4A</p>
+              <p>Islamabad, Pakistan</p>
               <p>Phone: +92 305 566 4442</p>
               <p>Email: info@cheesetech.pk</p>
             </address>
