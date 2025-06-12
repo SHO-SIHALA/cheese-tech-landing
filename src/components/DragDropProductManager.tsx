@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
-import { Upload, X, Plus, DragDropIcon } from 'lucide-react';
+import { Upload, X, Plus } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 
 interface Product {
@@ -117,7 +117,7 @@ const DragDropProductManager = ({ onProductAdd }: DragDropProductManagerProps) =
     <Card className="w-full max-w-2xl mx-auto">
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
-          <DragDropIcon className="w-5 h-5" />
+          <Upload className="w-5 h-5" />
           Add New Product
         </CardTitle>
       </CardHeader>
