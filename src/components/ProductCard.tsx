@@ -1,7 +1,5 @@
 
 import { Link } from 'react-router-dom';
-import { Card, CardContent, CardFooter } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
 import { useShoppingCart } from '@/contexts/ShoppingContext';
 import { ShoppingCart } from 'lucide-react';
 
@@ -28,50 +26,51 @@ const ProductCard = ({ product }: ProductCardProps) => {
   };
 
   return (
-    <Link to={`/products/${product.id}`}>
-      <Card className="h-full hover:shadow-lg transition-shadow cursor-pointer">
-        <CardContent className="p-4">
-          <div className="aspect-square bg-gray-100 rounded-lg mb-4 flex items-center justify-center">
-            {product.image_url ? (
-              <img
-                src={product.image_url}
-                alt={product.name}
-                className="w-full h-full object-cover rounded-lg"
-              />
-            ) : (
-              <div className="text-gray-400 text-sm">No image</div>
-            )}
-          </div>
-          
-          <h3 className="font-semibold text-lg mb-2 line-clamp-2">
+    <Link to={`/products/${product.id}`} className="group block">
+      <div className="glass-dark rounded-xl overflow-hidden transition-all duration-500 hover:bg-white/[0.06] hover:border-white/[0.1]">
+        {/* Image */}
+        <div className="aspect-square bg-muted/10 relative overflow-hidden">
+          {product.image_url ? (
+            <img
+              src={product.image_url}
+              alt={product.name}
+              className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
+            />
+          ) : (
+            <div className="w-full h-full flex items-center justify-center text-foreground/20 text-sm">
+              No image
+            </div>
+          )}
+          <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        </div>
+
+        {/* Content */}
+        <div className="p-6">
+          <h3 className="text-base font-semibold text-foreground mb-1 line-clamp-1 group-hover:text-primary transition-colors duration-500">
             {product.name}
           </h3>
-          
-          <p className="text-muted-foreground text-sm mb-3 line-clamp-2">
+          <p className="text-foreground/30 text-sm mb-4 line-clamp-2 font-light">
             {product.description}
           </p>
-          
+
           <div className="flex items-center justify-between">
-            <span className="text-2xl font-bold text-primary">
+            <span className="text-xl font-bold gradient-text">
               ${product.price.toFixed(2)}
             </span>
-            <span className="text-sm text-muted-foreground">
-              {product.stock_quantity > 0 ? `${product.stock_quantity} in stock` : 'Out of stock'}
-            </span>
+            <button
+              onClick={handleAddToCart}
+              disabled={isLoading || product.stock_quantity === 0}
+              className="w-9 h-9 rounded-full border border-foreground/10 flex items-center justify-center hover:border-primary hover:text-primary transition-all duration-500 disabled:opacity-30"
+            >
+              <ShoppingCart className="w-3.5 h-3.5" />
+            </button>
           </div>
-        </CardContent>
-        
-        <CardFooter className="p-4 pt-0">
-          <Button
-            onClick={handleAddToCart}
-            disabled={isLoading || product.stock_quantity === 0}
-            className="w-full"
-          >
-            <ShoppingCart className="w-4 h-4 mr-2" />
-            {product.stock_quantity > 0 ? 'Add to Cart' : 'Out of Stock'}
-          </Button>
-        </CardFooter>
-      </Card>
+
+          {product.stock_quantity === 0 && (
+            <p className="text-destructive/60 text-xs mt-2 uppercase tracking-wider">Out of Stock</p>
+          )}
+        </div>
+      </div>
     </Link>
   );
 };
