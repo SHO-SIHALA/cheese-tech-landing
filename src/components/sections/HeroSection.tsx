@@ -1,14 +1,5 @@
-
-import { useEffect, useRef, useState } from "react";
-
-const ParticleField = () => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
+import { useEffect, useState, Suspense } from "react";
+import HeroScene from "../HeroScene";
 
     let animationId: number;
     let mouseX = -1000;
