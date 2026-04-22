@@ -3,44 +3,36 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/sections/HeroSection";
 import AboutSection from "@/components/sections/AboutSection";
-import ServicesSection from "@/components/sections/ServicesSection";
 import WhyUsSection from "@/components/sections/WhyUsSection";
 import ContactSection from "@/components/sections/ContactSection";
 import FeaturedProducts from "@/components/sections/FeaturedProducts";
 
 const Index = () => {
   useEffect(() => {
-    // Update page title
     document.title = "Cheese Tech - IT & Cybersecurity Solutions";
-    
-    // Apply initial animations
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("animate-fade-up");
+            entry.target.classList.add("visible");
             observer.unobserve(entry.target);
           }
         });
       },
       { threshold: 0.1 }
     );
-    
-    document.querySelectorAll(".animate-on-scroll").forEach((el) => {
+
+    document.querySelectorAll(".reveal").forEach((el) => {
       observer.observe(el);
     });
-    
-    return () => {
-      if (observer) {
-        observer.disconnect();
-      }
-    };
+
+    return () => observer.disconnect();
   }, []);
-  
+
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-background">
       <Navbar />
-      
       <main className="flex-grow">
         <HeroSection />
         <AboutSection />
@@ -48,7 +40,6 @@ const Index = () => {
         <WhyUsSection />
         <ContactSection />
       </main>
-      
       <Footer />
     </div>
   );
