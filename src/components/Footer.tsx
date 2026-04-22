@@ -1,3 +1,4 @@
+import cheeseTechLogo from '@/assets/cheesetech-logo.png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -8,12 +9,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
           {/* Brand */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 rounded-full border border-foreground/20 flex items-center justify-center">
-                <span className="text-xs font-bold tracking-tighter text-foreground">CT</span>
-              </div>
-              <span className="text-sm uppercase tracking-[0.2em] text-foreground/60">Cheese Tech</span>
-            </div>
+            <img src={cheeseTechLogo} alt="Cheese Tech" className="h-10 w-auto invert" loading="lazy" />
             <p className="text-foreground/30 text-sm font-light leading-relaxed max-w-xs">
               Your trusted IT & Cybersecurity partner, providing innovative solutions to help businesses stay secure and efficient.
             </p>

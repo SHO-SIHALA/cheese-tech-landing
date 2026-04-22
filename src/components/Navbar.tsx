@@ -1,7 +1,8 @@
 
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, ShoppingCart, User, Store } from 'lucide-react';
+import { Menu, X, ShoppingCart } from 'lucide-react';
+import cheeseTechLogo from '@/assets/cheesetech-logo.png';
 import { Button } from '@/components/ui/button';
 import { useShoppingCart } from '@/contexts/ShoppingContext';
 
@@ -23,13 +24,8 @@ const Navbar = () => {
       <div className="container mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 group">
-            <div className="w-8 h-8 rounded-full border border-foreground/20 flex items-center justify-center group-hover:border-primary transition-colors duration-500">
-              <span className="text-foreground text-xs font-bold tracking-tighter">CT</span>
-            </div>
-            <span className="font-medium text-sm uppercase tracking-[0.2em] text-foreground/80">
-              Cheese Tech
-            </span>
+          <Link to="/" className="flex items-center group">
+            <img src={cheeseTechLogo} alt="Cheese Tech" className="h-10 w-auto invert" />
           </Link>
 
           {/* Desktop Navigation */}
